@@ -8,385 +8,418 @@
 		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=c5fc5199-ffeb-4030-a7b6-3369088c5bd2" type="text/javascript"></script>
 		<link rel="stylesheet" href="./style.css" />
 	</head>
-	<body style="margin: 0; padding: 0; background-color: dimgray">
-		<!-- Карта начинается тут -->
-		<div class="obekty-map">
-			<div class="obekty-map__map-wrap">
-				<!-- Этот блок такой же как на квс -->
-				<ul class="markers">
-					<li class="map-marker" data-latitude="59.87535966" data-longitude="30.33422828" data-for="map-infrastructure-10"></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="food"
-						data-latitude="59.875713"
-						data-longitude="30.335795"
-						data-for="map-infrastructure-10"
-						data-markup="Дикси"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="magazin"
-						data-latitude="59.874336"
-						data-longitude="30.333553"
-						data-for="map-infrastructure-10"
-						data-markup="Full House"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="food"
-						data-latitude="59.872672"
-						data-longitude="30.334275"
-						data-for="map-infrastructure-10"
-						data-markup="Продукты"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="services"
-						data-latitude="59.872412"
-						data-longitude="30.331946"
-						data-for="map-infrastructure-10"
-						data-markup="78th Street"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="education"
-						data-latitude="59.872165"
-						data-longitude="30.331203"
-						data-for="map-infrastructure-10"
-						data-markup="Детский сад"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./beauty.svg"
-						data-group="magazin"
-						data-latitude="59.873239"
-						data-longitude="30.331039"
-						data-for="map-infrastructure-10"
-						data-markup="Магазин"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="food"
-						data-latitude="59.873363"
-						data-longitude="30.331864"
-						data-for="map-infrastructure-10"
-						data-markup="Гастроном Свеаборгский"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./beauty.svg"
-						data-group="medicine"
-						data-latitude="59.872795"
-						data-longitude="30.323016"
-						data-for="map-infrastructure-10"
-						data-markup="Стоматология"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="education"
-						data-latitude="59.869516"
-						data-longitude="30.318840"
-						data-for="map-infrastructure-10"
-						data-markup="Мегаполис"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="money"
-						data-latitude="59.870569"
-						data-longitude="30.319583"
-						data-for="map-infrastructure-10"
-						data-markup="Альфа Банк"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./beauty.svg"
-						data-group="food"
-						data-latitude="59.871481"
-						data-longitude="30.316332"
-						data-for="map-infrastructure-10"
-						data-markup="Магнит"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="money"
-						data-latitude="59.874601"
-						data-longitude="30.329060"
-						data-for="map-infrastructure-10"
-						data-markup="Сбербанк"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="sport"
-						data-latitude="59.871364"
-						data-longitude="30.314841"
-						data-for="map-infrastructure-10"
-						data-markup="Mighty Sport"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./beauty.svg"
-						data-group="medicine"
-						data-latitude="59.871148"
-						data-longitude="30.314098"
-						data-for="map-infrastructure-10"
-						data-markup="Вада-Мед"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="education"
-						data-latitude="59.870718"
-						data-longitude="30.314388"
-						data-for="map-infrastructure-10"
-						data-markup="Школа"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="recreation"
-						data-latitude="59.868194"
-						data-longitude="30.328810"
-						data-for="map-infrastructure-10"
-						data-markup="Московский Парк Победы"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="education"
-						data-latitude="59.875389"
-						data-longitude="30.325697"
-						data-for="map-infrastructure-10"
-						data-markup="Прогимназия"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./beauty.svg"
-						data-group="medicine"
-						data-latitude="59.875573"
-						data-longitude="30.321354"
-						data-for="map-infrastructure-10"
-						data-markup="Аптека Здравио"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="services"
-						data-latitude="59.875573"
-						data-longitude="30.321354"
-						data-for="map-infrastructure-10"
-						data-markup="Почта России"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="cafe"
-						data-latitude="59.875549"
-						data-longitude="30.321016"
-						data-for="map-infrastructure-10"
-						data-markup="Элит, кафе"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="food"
-						data-latitude="59.876346"
-						data-longitude="30.333837"
-						data-for="map-infrastructure-10"
-						data-markup="Магнит"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="education"
-						data-latitude="59.877297"
-						data-longitude="30.332151"
-						data-for="map-infrastructure-10"
-						data-markup="Детский сад"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="education"
-						data-latitude="59.876406"
-						data-longitude="30.329565"
-						data-for="map-infrastructure-10"
-						data-markup="Школа"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="food"
-						data-latitude="59.876302"
-						data-longitude="30.326786"
-						data-for="map-infrastructure-10"
-						data-markup="Дикси"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="education"
-						data-latitude="59.876408"
-						data-longitude="30.325230"
-						data-for="map-infrastructure-10"
-						data-markup="Школа"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="education"
-						data-latitude="59.877097"
-						data-longitude="30.323316"
-						data-for="map-infrastructure-10"
-						data-markup="Детский сад"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="money"
-						data-latitude="59.872416"
-						data-longitude="30.320978"
-						data-for="map-infrastructure-10"
-						data-markup="Райффайзен банк"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="medicine"
-						data-latitude="59.874013"
-						data-longitude="30.330872"
-						data-for="map-infrastructure-10"
-						data-markup="Пикассо"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="education"
-						data-latitude="59.871996"
-						data-longitude="30.327501"
-						data-for="map-infrastructure-10"
-						data-markup="Детский сад"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="cafe"
-						data-latitude="59.871982"
-						data-longitude="30.325247"
-						data-for="map-infrastructure-10"
-						data-markup="Чито Гврито"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="education"
-						data-latitude="59.872728"
-						data-longitude="30.335251"
-						data-for="map-infrastructure-10"
-						data-markup="Детский сад"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="education"
-						data-latitude="59.875135"
-						data-longitude="30.319130"
-						data-for="map-infrastructure-10"
-						data-markup="Университет МЧС"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="money"
-						data-latitude="59.877685"
-						data-longitude="30.320813"
-						data-for="map-infrastructure-10"
-						data-markup="Сбербанк"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="money"
-						data-latitude="59.879175"
-						data-longitude="30.318013"
-						data-for="map-infrastructure-10"
-						data-markup="Газпромбанк"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="recreation"
-						data-latitude="59.881097"
-						data-longitude="30.317187"
-						data-for="map-infrastructure-10"
-						data-markup="ТЦ Электра"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="medicine"
-						data-latitude="59.878679"
-						data-longitude="30.322348"
-						data-for="map-infrastructure-10"
-						data-markup="ЛекОптТорг"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="cafe"
-						data-latitude="59.876688"
-						data-longitude="30.320838"
-						data-for="map-infrastructure-10"
-						data-markup="Империал"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="recreation"
-						data-latitude="59.867922"
-						data-longitude="30.300863"
-						data-for="map-infrastructure-10"
-						data-markup="Парк Авиаторов"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="recreation"
-						data-latitude="59.869140"
-						data-longitude="30.350652"
-						data-for="map-infrastructure-10"
-						data-markup="ТРК Питер Радуга"
-					></li>
-					<li
-						class="grouped-map-marker"
-						data-icon="./cafe.svg"
-						data-group="food"
-						data-latitude="59.871481"
-						data-longitude="30.340875"
-						data-for="map-infrastructure-10"
-						data-markup="Карусель"
-					></li>
-				</ul>
-				<!-- END Этот блок такой же как на квс -->
-				<div class="obekty-map__map"></div>
+	<body style="margin: 0; padding: 0; background-color: dimgray; display: flex; justify-content: center">
+		<div style="width: 1416px">
+			<!-- Карта начинается тут -->
+			<div class="obekty-map">
+				<div class="obekty-map__map-wrap">
+					<!-- Этот блок такой же как на квс -->
+					<ul class="markers">
+						<li class="map-marker" data-latitude="59.87535966" data-longitude="30.33422828" data-for="map-infrastructure-10"></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="food"
+							data-latitude="59.875713"
+							data-longitude="30.335795"
+							data-for="map-infrastructure-10"
+							data-markup="Дикси"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="magazin"
+							data-latitude="59.874336"
+							data-longitude="30.333553"
+							data-for="map-infrastructure-10"
+							data-markup="Full House"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="food"
+							data-latitude="59.872672"
+							data-longitude="30.334275"
+							data-for="map-infrastructure-10"
+							data-markup="Продукты"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="services"
+							data-latitude="59.872412"
+							data-longitude="30.331946"
+							data-for="map-infrastructure-10"
+							data-markup="78th Street"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="education"
+							data-latitude="59.872165"
+							data-longitude="30.331203"
+							data-for="map-infrastructure-10"
+							data-markup="Детский сад111"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./beauty.svg"
+							data-group="magazin"
+							data-latitude="59.873239"
+							data-longitude="30.331039"
+							data-for="map-infrastructure-10"
+							data-markup="Магазин"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="food"
+							data-latitude="59.873363"
+							data-longitude="30.331864"
+							data-for="map-infrastructure-10"
+							data-markup="Гастроном Свеаборгский"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./beauty.svg"
+							data-group="medicine"
+							data-latitude="59.872795"
+							data-longitude="30.323016"
+							data-for="map-infrastructure-10"
+							data-markup="Стоматология"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="education"
+							data-latitude="59.869516"
+							data-longitude="30.318840"
+							data-for="map-infrastructure-10"
+							data-markup="Мегаполис"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="money"
+							data-latitude="59.870569"
+							data-longitude="30.319583"
+							data-for="map-infrastructure-10"
+							data-markup="Альфа Банк"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./beauty.svg"
+							data-group="food"
+							data-latitude="59.871481"
+							data-longitude="30.316332"
+							data-for="map-infrastructure-10"
+							data-markup="Магнит"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="money"
+							data-latitude="59.874601"
+							data-longitude="30.329060"
+							data-for="map-infrastructure-10"
+							data-markup="Сбербанк"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="sport"
+							data-latitude="59.871364"
+							data-longitude="30.314841"
+							data-for="map-infrastructure-10"
+							data-markup="Mighty Sport"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./beauty.svg"
+							data-group="medicine"
+							data-latitude="59.871148"
+							data-longitude="30.314098"
+							data-for="map-infrastructure-10"
+							data-markup="Вада-Мед"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="education"
+							data-latitude="59.870718"
+							data-longitude="30.314388"
+							data-for="map-infrastructure-10"
+							data-markup="Школа"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="recreation"
+							data-latitude="59.868194"
+							data-longitude="30.328810"
+							data-for="map-infrastructure-10"
+							data-markup="Московский Парк Победы"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="education"
+							data-latitude="59.875389"
+							data-longitude="30.325697"
+							data-for="map-infrastructure-10"
+							data-markup="Прогимназия"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./beauty.svg"
+							data-group="medicine"
+							data-latitude="59.875573"
+							data-longitude="30.321354"
+							data-for="map-infrastructure-10"
+							data-markup="Аптека Здравио"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="services"
+							data-latitude="59.875573"
+							data-longitude="30.321354"
+							data-for="map-infrastructure-10"
+							data-markup="Почта России"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="cafe"
+							data-latitude="59.875549"
+							data-longitude="30.321016"
+							data-for="map-infrastructure-10"
+							data-markup="Элит, кафе"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="food"
+							data-latitude="59.876346"
+							data-longitude="30.333837"
+							data-for="map-infrastructure-10"
+							data-markup="Магнит"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="education"
+							data-latitude="59.877297"
+							data-longitude="30.332151"
+							data-for="map-infrastructure-10"
+							data-markup="Детский сад"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="education"
+							data-latitude="59.876406"
+							data-longitude="30.329565"
+							data-for="map-infrastructure-10"
+							data-markup="Школа"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="food"
+							data-latitude="59.876302"
+							data-longitude="30.326786"
+							data-for="map-infrastructure-10"
+							data-markup="Дикси"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="education"
+							data-latitude="59.876408"
+							data-longitude="30.325230"
+							data-for="map-infrastructure-10"
+							data-markup="Школа"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="education"
+							data-latitude="59.877097"
+							data-longitude="30.323316"
+							data-for="map-infrastructure-10"
+							data-markup="Детский сад"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="money"
+							data-latitude="59.872416"
+							data-longitude="30.320978"
+							data-for="map-infrastructure-10"
+							data-markup="Райффайзен банк"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="medicine"
+							data-latitude="59.874013"
+							data-longitude="30.330872"
+							data-for="map-infrastructure-10"
+							data-markup="Пикассо"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="education"
+							data-latitude="59.871996"
+							data-longitude="30.327501"
+							data-for="map-infrastructure-10"
+							data-markup="Детский сад"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="cafe"
+							data-latitude="59.871982"
+							data-longitude="30.325247"
+							data-for="map-infrastructure-10"
+							data-markup="Чито Гврито"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="education"
+							data-latitude="59.872728"
+							data-longitude="30.335251"
+							data-for="map-infrastructure-10"
+							data-markup="Детский сад"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="education"
+							data-latitude="59.875135"
+							data-longitude="30.319130"
+							data-for="map-infrastructure-10"
+							data-markup="Университет МЧС"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="money"
+							data-latitude="59.877685"
+							data-longitude="30.320813"
+							data-for="map-infrastructure-10"
+							data-markup="Сбербанк"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="money"
+							data-latitude="59.879175"
+							data-longitude="30.318013"
+							data-for="map-infrastructure-10"
+							data-markup="Газпромбанк"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="recreation"
+							data-latitude="59.881097"
+							data-longitude="30.317187"
+							data-for="map-infrastructure-10"
+							data-markup="ТЦ Электра"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="medicine"
+							data-latitude="59.878679"
+							data-longitude="30.322348"
+							data-for="map-infrastructure-10"
+							data-markup="ЛекОптТорг"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="cafe"
+							data-latitude="59.876688"
+							data-longitude="30.320838"
+							data-for="map-infrastructure-10"
+							data-markup="Империал"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="recreation"
+							data-latitude="59.867922"
+							data-longitude="30.300863"
+							data-for="map-infrastructure-10"
+							data-markup="Парк Авиаторов"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="recreation"
+							data-latitude="59.869140"
+							data-longitude="30.350652"
+							data-for="map-infrastructure-10"
+							data-markup="ТРК Питер Радуга"
+						></li>
+						<li
+							class="grouped-map-marker"
+							data-icon="./cafe.svg"
+							data-group="food"
+							data-latitude="59.871481"
+							data-longitude="30.340875"
+							data-for="map-infrastructure-10"
+							data-markup="Карусель"
+						></li>
+					</ul>
+					<!-- END Этот блок такой же как на квс -->
+					<div class="obekty-map__map"></div>
+				</div>
+				<ul class="obekty-map__nav">
+					<div class="obekty-swich__wrap">
+						<label class="obekty-swich">
+							<input data-obekty-swich="list" type="radio" name="obekty-swich" class="obekty-swich__input" />
+							<span class="obekty-swich__text">Объекты на карте</span>
+						</label>
+						<label class="obekty-swich">
+							<input data-obekty-swich="offes" type="radio" name="obekty-swich" class="obekty-swich__input" />
+							<span class="obekty-swich__text">Офис продаж</span>
+						</label>
+					</div>
+					<div data-obekty-block="offes" class="obekty-offes" style="display: none;">
+						<img src="https://kvsspb.ru/upload/iblock/9b0/nautilus.jpg" alt="ЖК «Наутилус»" />
+						<h3>ЖК «Наутилус»</h3>
+						<address>Набережная Матисова канала, 1</address>
+						<p class="working-time">Четверг - понедельник: 10.00 - 19.00<br />Вторник, среда: выходной</p>
+						<p class="notification">В офисе продаж работает ипотечный консультант</p>
+					</div>
+					<ul class="obekty-list">
+						<!-- <li class="obekty-list__item">
+							<label class="obekty-list__button">
+								<input class="obekty-list__input" type="radio" name="obekty-list" />
+								<img src="beauty.svg" width="40" height="40" alt="Все объекты" class="obekty-list__button-icon">
+								<span class="obekty-list__button-text">Все объекты</span>
+							</label>
+						</li>
+						<li class="obekty-list__item">
+							<label class="obekty-list__button">
+								<input class="obekty-list__input" type="radio" name="obekty-list" />
+								<img src="beauty.svg" width="40" height="40" alt="Все объекты" class="obekty-list__button-icon">
+								<span class="obekty-list__button-text">Кафе и рестораны</span>
+							</label>
+						</li> -->
+					</ul>
+					<!-- <div data-obekty-block="list" class="obekty-list__wrap">
+					</div> -->
+				</div>
 			</div>
+			<!-- Кончается тут -->
 		</div>
-
-		<div class="obekty-map-icon">
-			<div class="obekty-map-icon__popup">текст</div>
-			<img width="40" height="40" src="./cafe.svg" alt="текст" />
-		</div>
-
 		<script src="./main.js"></script>
-		<!-- Кончается тут -->
 	</body>
 </html>
