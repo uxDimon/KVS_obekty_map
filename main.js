@@ -89,7 +89,16 @@ ymaps.ready(function () {
 
 		const obektyMapIcon = {
 			// Список всех меток
-			list: {},
+			list: {
+				all: [
+					{
+						iconUrl:
+							"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none' role='img'%3E%3Cg fill='%2368717B'%3E%3Crect x='11' y='11' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='11' y='18' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='11' y='25' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='18' y='11' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='18' y='18' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='18' y='25' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='25' y='11' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='25' y='18' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='25' y='25' width='4' height='4' rx='2'%3E%3C/rect%3E%3C/g%3E%3C/svg%3E",
+						text: "Все объекты",
+						coordinates: [59.87535966, 30.33422828],
+					},
+				],
+			},
 			created() {
 				for (const icon of mapWrap.querySelectorAll(".markers > .grouped-map-marker")) {
 					const iconOptions = {
@@ -106,7 +115,11 @@ ymaps.ready(function () {
 		};
 		obektyMapIcon.created();
 
-		function obektyListItem(key, iconList = obektyMapIcon.list, name = obektyMapGroupName, wrap = mapWrap.querySelector(".obekty-list")) {
+		function obektyListItem(key, callback, iconList = null, name = null, wrap = null) {
+			iconList = iconList ? iconList : obektyMapIcon.list;
+			name = name ? name : obektyMapGroupName;
+			wrap = wrap ? wrap : mapWrap.querySelector(".obekty-list");
+
 			// Выбор категории меток
 			let item = document.createElement("li");
 			item.className = "obekty-list__item";
@@ -119,30 +132,53 @@ ymaps.ready(function () {
 			`;
 			item.querySelector(".obekty-list__input").addEventListener("change", () => {
 				myMap.geoObjects.removeAll();
-				for (const icon of obektyMapIcon.list[key]) {
-					const myPlacemark = new ymaps.Placemark(
-						icon.coordinates,
-						{
-							icontext: icon.text,
-							iconUrl: icon.iconUrl,
-						},
-						{
-							iconLayout: animatedLayout,
-						}
-					);
-					myMap.geoObjects.add(myPlacemark);
-				}
+				callback.apply(null, [key]);
 			});
 
 			wrap.insertAdjacentElement("beforeend", item);
 		}
 
+		function addIconMap(key) {
+			for (const icon of obektyMapIcon.list[key]) {
+				const myPlacemark = new ymaps.Placemark(
+					icon.coordinates,
+					{
+						icontext: icon.text,
+						iconUrl: icon.iconUrl,
+					},
+					{
+						iconLayout: animatedLayout,
+					}
+				);
+				myMap.geoObjects.add(myPlacemark);
+			}
+		}
 		console.log(obektyMapIcon.list);
 
 		for (const key in obektyMapIcon.list) {
 			if (Object.hasOwnProperty.call(obektyMapIcon.list, key)) {
-				obektyListItem(key);
+				obektyListItem(key, addIconMap);
 			}
 		}
 	}
 });
+
+// function name(params) {
+// 	params = Object.assign(
+// 		{
+// 			id: 1,
+// 			slector: "kakaka",
+// 			list: {
+// 				dddddd: "2",
+// 			},
+// 		},
+// 		params
+// 	);
+// 	console.log(params);
+// }
+// name({
+// 	id: 2,
+// 	list: {
+// 		ccccc: "3",
+// 	},
+// });

@@ -1,0 +1,1088 @@
+/*Заглушка для старых браузеров*/
+.footer-ie{
+    position: fixed;
+    /* display: block; */
+    z-index: 999999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #000;
+}
+.browser-container {
+    width: 670px;
+    margin: 0 auto;
+    padding-top: 60px
+}
+.browser-container .browser-container-title {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px
+}
+.browser-container .browser-container-link a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 auto;
+    text-decoration: none;
+    font-size: 14px;
+    width: 200px;
+    height: 40px;
+    color: #F4691B;
+    border: 1px solid #F4691B;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.browser-container .browser-container-subtitle {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 80px
+}
+.browser-container .browser-container-box {
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.browser-container .browser-container-box a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 33%;
+    margin-bottom: 80px;
+    justify-content: center;
+    color: #000;
+}
+.browser-container .browser-container-box .browser-container-box-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    justify-content: center;
+}
+.browser-container .browser-container-box .browser-container-box-item .browser-container-box-item-image {
+    margin-right: 20px
+}
+.browser-container .browser-container-box .browser-container-box-item .browser-container-box-item-image img {
+    max-height: 50px
+}
+.browser-container .browser-container-box .browser-container-box-item .browser-container-box-item-text {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+.browser-container .browser-container-box .browser-container-box-item .browser-container-box-item-text .browser-container-box-item-name {
+    font-size: 24px
+}
+.browser-container .browser-container-box .browser-container-box-item .browser-container-box-item-text .browser-container-box-item-version {
+    font-size: 14px
+}
+/*Заглушка для старых браузеров Конец*/
+
+.btn-orange{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px 33px 12px!important;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 28px;
+    color: #fff;
+}
+.btn-orange:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    background: #f4691b;
+}
+.btn-orange:after{
+    content: "";
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    left: -50%;
+    right: -50%;
+    z-index: -1;
+    background: #cd4a00;
+    opacity: .2;
+    -webkit-transform: translate(-75%,25%) skewX(60deg);
+    transform: translate(-75%,25%) skewX(60deg);
+    -webkit-transition: opacity 170ms linear,-webkit-transform 170ms linear;
+    transition: transform 170ms linear,opacity 170ms linear;
+    transition: transform 170ms linear,opacity 170ms linear,-webkit-transform 170ms linear;
+}
+.btn-orange:hover:after,
+.btn-orange:focus:after{
+    opacity: 1;
+    -webkit-transform: translate(0%,0%) skewX(60deg);
+    transform: translate(0%,0%) skewX(60deg);
+}
+.modal-info-box {
+    width: 300px;
+    background: #fff;
+    border: 5px solid #dcdfe1;
+    border-radius: 4px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-info-box.error {
+    border-color: #d8001e;
+}
+.modal-info-box.ok {
+    border-color: #01b12f;
+}
+ul.apartments>li>button.add-to-cart[data-in-basket="yes"] {
+    background: url(images/icon-cart-green.svg) center center no-repeat;
+}
+
+
+.main-text .markup img{
+    max-width: 100%;
+}
+.main-text,
+p.subtitle{
+    text-align: justify;
+}
+html>body>div.lightbox{
+    z-index: 999999999999;
+}
+html>body>main>div>section.contacts>div.map-wrapper>aside>div.custom-scrollbar-wrapper>div.content-wrapper>div.content>ul.contacts>li>div.map-action>button[disabled]::before{
+    content: "Скопировано";
+}
+html > body > div.lightbox.bottom-block > div.wrapper > div.content > div.share > span::after {
+    content: " планировкой";
+}
+html>body>main>div>section.timeline>ul>li>label::before{
+    content: 'Свернуть ';
+}
+html>body>main>div>section.timeline>input#show_all_stages:not(:checked)+ul>li>label::before {
+    content: 'Показать все ';
+}
+html>body>main>div>section.list>ul>li:not(.show-more){
+    min-height: 56px;
+}
+ul.fields>li div.range-one>div.input>span.input>input, 
+ul.fields>li div.range>ul.inputs>li>span.input>input,
+ul.fields>li div.range>ul.inputs>li>span.input>span.focus-out{
+    font-variant-numeric: initial;
+}
+html>body>main>div>div.expanding-text.expanding-doc-uploader>ul>li>form>div.requirements>ul>li{
+    position: relative;
+    padding-left: 16px;
+}
+html>body>main>div>div.expanding-text.expanding-doc-uploader>ul>li>form>div.requirements>ul>li::before{
+    position: absolute;
+    top: 7px;
+    left: 0px;
+    width: 0;
+    height: 0;
+    margin-right: 0;
+    content: "";
+    border-top: 4px solid transparent;
+    border-left: 7px solid #f4691b;
+    border-bottom: 4px solid transparent;
+}
+.sending-block {
+    position: relative;
+}
+.sending-block::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -100;
+    content: "";
+    opacity: 0;
+    background-image: url(/styles/images/loader.svg);
+    background-color: rgba(255,255,255,.5);
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transition: opacity 170ms linear,z-index 0s linear 170ms;
+    transition: opacity 170ms linear,z-index 0s linear 170ms;
+}
+.sending-block::before {
+    z-index: 10;
+    opacity: 1;
+    -webkit-transition: opacity 170ms linear,z-index 0s;
+    transition: opacity 170ms linear,z-index 0s;
+}
+/* html>body>header>div>a.cart.cart[data-items-count]::after{
+    width: 10px;
+    padding: 2px 3px;
+    text-align: center;
+} */
+.banner-linkwithimg{
+    margin-bottom: 20px!important;
+    display: block;
+}
+.banner-linkwithimg img{
+    width: 100%;
+}
+html>body>main>div.stream-aside>div>aside.graphic>a.graphic__link{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+html>body>main>div.stream-aside>div>aside.graphic>a.graphic__link:before,
+html>body>main>div.stream-aside>div>aside.graphic>a.graphic__link:after{
+    display: none;
+}
+html>body>main>div>section.list>ul>li>a{
+    display: block;
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: #c7c7c7;
+}
+html>body>main>div>section.list>ul>li>a:hover{
+    color: #f4691b;
+}
+html>body>main>div>section.documents>ul.documents-list>li>ul>li>ul>li>img{
+    max-width: 100%;
+}
+
+@media screen and (max-width: 655px){
+    ul.mini-cards>li:not(.load-more)>a{
+        padding: 16px;
+    }
+    ul.mini-cards>li:not(.load-more)>a>img{
+        position: static;
+        margin-bottom: 20px;
+    }
+}
+html>body>main>div>section.visual>div.floors>ul>li>a{
+    color: #40464d;
+}
+html>body>main>div>section.visual>div.floors>ul>li:hover>a{
+    color: #fff;
+}
+html>body>main>div>section.visual>figure>svg [data-apartment] {
+    cursor: pointer;
+}
+/* html>body>main>div>section.visual>figure>svg>g#Floors [data-apartment], 
+html>body>main>div>section.visual>figure>svg>g#Floors path{
+    fill: transparent!important;
+}
+html>body>main>div>section.visual>figure>svg>g#Floors [data-apartment]:hover, 
+html>body>main>div>section.visual>figure>svg>g#Floors path:hover{
+    fill: rgba(244,105,27,.6)!important;
+} */
+
+
+
+/*Block DUU checkbox hidden*/
+html>body>main>div>section.equities-ra>form>input.checker-block:not(:checked)+ul.fields>li:not(:first-child) {
+    display: none;
+}
+html>body>main>div>section.equities-ra>form>input.checker-block:checked+ul.fields>li>label.toggle::after {
+    left: 16px;
+    background: #f4691b;
+}
+html>body>main>div>section.equities-ra>form>input.checker-block:not(:checked)+ul.fields>li:first-child {
+    border-bottom: none;
+    margin: 0;
+}
+
+html>body>main>div>section.expanding-text.expanding-form.equities-ra>form.form li {
+    width: 100%;
+    margin: 0 0 16px;
+}
+
+html>body>main>div>section.equities-ra.expanding-text.expanding-form>form.form {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 24px 428px 0 28px;
+    border: 1px solid #dcdfe1;
+    border-radius: 4px;
+}
+html>body>main>div>section.equities-ra.expanding-text.expanding-form>form.form {
+    border-radius: 4px;
+}
+@media screen and (max-width: 1511px) {
+    html>body>main>div>section.equities-ra.expanding-text.expanding-form>form.form {
+        padding: 24px 332px 0 24px;
+    }
+}
+@media screen and (max-width: 1279px) {
+     html>body>main>div>section.equities-ra.expanding-text.expanding-form>form.form {
+        padding: 24px 260px 0 24px;
+    }
+}
+@media screen and (max-width: 975px) {
+     html>body>main>div>section.equities-ra.expanding-text.expanding-form>form.form {
+        padding: 24px 240px 0 24px;
+    }
+}
+@media screen and (max-width: 655px) {
+     html>body>main>div>section.equities-ra.expanding-text.expanding-form>form.form {
+        padding: 24px 16px 0;
+    }
+}
+/*Block DUU checkbox hidden*/
+
+/*Modal form error botton: Authorize, Registration and Other*/
+html>body>div.lightbox:not(.bottom-block)>div.wrapper>div.content>form>ul.fields>li.error-modal-form {
+    margin-top: 0px;
+}
+.error-modal-form span {
+    color: red;
+    font-size: 12px;
+}
+/*Modal form error botton: Authorize, Registration and Other*/
+
+
+html>body>main>div>section.visual>figure>svg>g#Apartments [data-color-apartment] {
+    opacity: 0.6;
+}
+
+html>body>main>div>section.visual>figure>svg>g#Apartments [data-color-apartment]:hover,
+html>body>main>div>section.visual>figure>svg>g#Apartments path:hover {
+    opacity: 0.3;
+}
+
+html>body>main>div>section.visual>div.scheme>svg>g .region {
+    fill: #dcdfe1;
+}
+html>body>main>div>section.visual>div.scheme>svg>g .region:hover,
+html>body>main>div>section.visual>div.scheme>svg>g .region.active {
+    fill: #a5a5a5 !important;
+}
+
+html>body>main>div>section.visual>figure>svg>g#Apartments [data-color-apartment] {
+    opacity: 0.6;
+}
+
+html>body>main>div>section.visual>figure>svg>g#Floors [data-color-apartment][data-apartment-build] {
+    fill: rgba(239, 108, 64,.0);
+}
+html>body>main>div>section.visual>figure>svg>g#Floors [data-color-apartment][data-apartment-build]:hover {
+    fill: rgba(244,105,27,.8);
+}
+
+html>body>main>div>section.chooser.commercial>ul.apartments.parking>li.headings>ul>li.area,
+html>body>main>div>section.chooser.commercial>ul.apartments.parking>li>a>ul.features>li.area{
+    margin-left: 32px;
+}
+.lightbox.show {
+    font-size: 20px;
+    line-height: 24px;
+    font-feature-settings: 'pnum' on,'lnum' on,'salt' on;
+}
+.lightbox.show h2 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 5px;
+    font-feature-settings: 'pnum' on,'lnum' on,'salt' on;
+}
+html>body>div.lightbox:not(.bottom-block)>div.wrapper>div.content>p.lead {
+    font-size: 20px;
+}
+@media screen and (max-width: 975px){
+    html > body > main > div > section.chooser.commercial > ul.apartments > li > a > ul.features > li.area::before {
+        content: "Помещение, ";
+    }
+}
+
+.fields-ra {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 28px 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 26px 28px;
+}
+
+.fields-ra > * {
+    -ms-grid-column-span: 2;
+    grid-column-end: span 2;
+}
+
+.fields-ra .date,
+.fields-ra .radios {
+    -ms-grid-column-span: 1;
+    grid-column-end: span 1;
+}
+
+html>body>div.lightbox:not(.bottom-block)>div.wrapper>div.content>form>ul.fields-ra>li:not(:first-child) {
+    margin-top: 0;
+}
+
+p.pretitle_ra::first-letter {
+    text-transform: none;
+}
+
+p.pretitle_ra {
+    margin-top: 24px;
+}
+
+@media screen and (max-width: 425px) {
+    .fields-ra {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .fields-ra > * {
+        -ms-grid-column-span: 1;
+        grid-column-end: span 1;
+    }
+}
+
+.subsidies-block-inside.hidden-block-forever {
+    display: none;
+}
+.defaultInput_check.hidden-block-forever {
+    display: none;
+}
+.opacity-block-forever {
+    visibility: hidden;
+}
+
+/* Меблирование */
+h2.title.ra-meblirovanie__h-btn {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -8px -8px 0 -8px;
+}
+
+h2.title.ra-meblirovanie__h-btn > * {
+    margin: 8px;
+}
+
+@media screen and (max-width: 1511px) {
+    h2.title.ra-meblirovanie__h-btn {
+        margin-bottom: 8px;
+    }
+}
+/* Меблирование end */
+
+/* Пресса о нас */
+.news-list-source {
+    margin-bottom: 12px;
+    flex-grow: 0;
+}
+.news-list-source>a {
+    color: #68717b;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .015em;
+    font-weight: 500;
+}
+ul.mini-cards>li:not(.load-more).promo .news-list-source>a {
+    color: #ffffff;
+}
+ul.mini-cards>li:not(.load-more) {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+ul.mini-cards>li:not(.load-more)>a {
+    padding: 0;
+    height: auto;
+    flex-grow: 1;
+}
+/* Пресса о нас end */
+
+/* header */
+html>body>header>div>nav {
+    width: auto;
+}
+@media screen and (max-width: 1919px) {
+    html>body>header>div>nav {
+        width: auto;
+    }
+}
+@media screen and (max-width: 1530px) {
+    html>body>header>div>nav>ul>li>a {
+        padding: 0 12px;
+    }
+}
+@media screen and (max-width: 1511px) {
+    html>body>header>div>nav {
+        width: auto;
+    }
+    html>body>header>div>nav>ul>li>a {
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 1310px) {
+    html>body>header>div>nav>ul>li>a {
+        padding: 0 6px;
+    }
+}
+@media screen and (max-width: 1279px) {
+    html>body>header>div>nav {
+        width: auto;
+    }
+}
+@media screen and (max-width: 1115px) {
+    html>body>header>div>a.shop {
+        display: none;
+    }
+}
+@media screen and (max-width: 1024px) {
+    /* html>body>header>div>a.logout {
+        display: none;
+    } */
+}
+@media screen and (max-width: 975px) {
+    html>body>header>div>a.shop {
+        display: flex;
+    }
+    html>body>header>div>nav {
+        width: 100%;
+    }
+    html>body>header>div>a.logout {
+        justify-content: flex-start;
+    }
+    html>body>header>div>p {
+        width: auto;
+    }
+    html>body>header>div>nav>ul>li>a {
+        padding: 20px 0;
+    }
+    /* html>body>header>div>a.logout {
+        display: flex;
+    } */
+}
+@media screen and (max-width: 730px) {
+    html>body>header>div>p {
+        width: 90%;
+    }
+}
+/* header end */
+
+/* Слайдер */
+@media screen and (max-width: 975px){
+    html>body>main>div>section.slider-promo>div.slider-wrapper ul.slider>li>a>div>ul {
+        display: flex;
+        justify-content: space-around;
+        margin: -24px -40px 24px;
+        width: auto;
+        align-self: stretch;
+    }
+}
+@media screen and (max-width: 655px){
+    html>body>main>div>section.slider-promo>div.slider-wrapper ul.slider>li>a>div>ul {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: 480px){
+    html>body>main>div>section.slider-promo>div.slider-wrapper ul.slider>li>a>div>ul {
+        flex-direction: column;
+    }
+    html>body>main>div>section.slider-promo>div.slider-wrapper ul.slider>li>a>div>ul>li:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 24px;
+    }
+    html>body>main>div>section.slider-promo>div.slider-wrapper ul.slider>li>a>div>ul>li:last-child {
+        margin-bottom: 0;
+    }
+}
+/* Слайдер end */
+
+/* Этаж ссылка  */
+html>body>main>div>section.visual>div.floors>ul>li>a {
+    display: block;
+}
+html>body.visual-floor {
+    overflow: hidden;
+    height: 100vh;
+}
+/* html>body.visual-floor>.components-container>.stream-wide {
+}
+html>body>main>div:not(.stream-aside):last-child>:last-child.visual[data-step] {
+    height: calc(100vh - 170px);
+} */
+/* Этаж ссылка end */
+
+html>body>input#header-menu:not(:checked)~header>div>a.order-call {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+html>body>input#header-menu:checked~header>div>a.order-call {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+a[type="button"], button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+ul.apartments>li>button.add-to-cart[data-in-basket="yes"] {
+    background-position-x: 8px;
+}
+
+html>body>main>div:not(.stream-aside)>.ra_partner-program-text {
+    margin-bottom: 42px;
+}
+
+html>body>div.lightbox:not(.bottom-block)>div.wrapper>div.content>figure>img {
+    margin: 0;
+}
+
+.lightbox.show .text {
+    position: relative;
+    padding: 45px 50px;
+}
+
+.lightbox.show .text::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: -48px;
+    width: 100vw;
+    height: 100%;
+    background-color: #F4F5F6;
+    z-index: -1;
+}
+
+.lightbox.show .text::after {
+    position: absolute;
+    content: '';
+    top: -30px;
+    left: 30px;
+    border: 30px solid transparent;
+    border-left: 66px solid #FFFFFF;
+    border-top: 30px solid #FFFFFF;
+}
+
+.lightbox.show .text h2 {
+    color: #f4691b;
+    margin-bottom: 8px;
+}
+
+.lightbox.show .text ul {
+    margin-top: 17px;
+}
+
+.lightbox.show .text li {
+    position: relative;
+    padding-left: 50px;
+}
+.lightbox.show .text li::before {
+    position: absolute;
+    content: '';
+    top: 6px;
+    left: 20px;
+    border: 5px solid transparent;
+    border-left: 10px solid #f4691b;
+}
+.lightbox.show .text li:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1279px) {
+    .lightbox.show .text::before {
+        right: -2.5%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .lightbox.show .text {
+        padding: 45px 16px;
+    }
+}
+
+html>body>main>div>section.chooser.parking>ul.apartments>li:not(.complex):not(.headings):not([data-booked=yes]):hover>a>ul.features>li.price>button.book {
+    left: 0;
+    right: auto;
+}
+
+.pass__Dragzone p{
+    max-width: 200px;
+}
+
+.borrowers .borrowers-item {
+    width: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .mortWrap-block .defaultInput {
+        width: 100% !important;
+        margin-right: 0;
+    }
+
+    .subsidies-block-inside {
+        flex-direction: column;
+    }
+    .subsidies-block-inside .defaultInput {
+        flex-direction: column;
+        margin: 0 0 18px 0;
+    }
+    .subsidies-block_half {
+        width: 100%;
+    }
+
+    .pass {
+        flex-direction: column;
+    }
+    .pass .pass__Sign,
+    .pass .pass__Dragzone {
+        margin: 0 0 18px;
+        flex: 0 0 105px;
+    }
+
+    .borrowers .borrowers-item {
+        width: 100%;
+    }
+}
+
+html>body>main>div>section.chooser.resale>ul.apartments>li>a>ul.features>li.address>span[style]:nth-of-type(1n+3) {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 975px) {
+    html>body>main>div>section.chooser.resale>ul.apartments>li>a>ul.features>li.rooms {
+        margin-top: 12px;
+    }
+    ul.apartments>li>a,
+    html>body>main>div>section.chooser.resale>ul.apartments>li>a>ul.features {
+        height: 100%;
+    }
+    html>body>main>div>section.chooser.resale>ul.apartments>li>a>ul.features>li.layout{
+        align-self: flex-start;
+    }
+    html>body>main>div>section.chooser.resale>ul.apartments>li>a>ul.features>li.price{
+        align-self: flex-end;
+    }
+}
+
+.ra_image_thanks {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+html>body>main>div>section.news>div.filters>ul>li>label {
+    border: 1px solid #dcdfe1;
+    padding: 1px 7px;
+    border-radius: 4px;
+}
+
+html>body>main>div>section.news>div.filters>ul>li>input:checked+label {
+    border-color: #f4691b;
+}
+html>body>main>div>section.news>div.filters>ul>li:not(:last-child){
+    margin-right: 16px;
+}
+
+html>body>main>div>section.complex-list>label a {
+    color: #232930;
+}
+html>body>main>div>section.complex-list>h1 {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: auto;
+    margin-bottom: 16px;
+}
+
+ul.fields>li div.select>label:not(.multiselect):not(.select)[for="birthChildren"]{
+    font-size: 16px;
+    text-overflow: clip;
+    top: 14px;
+}
+
+html>body>main>div.stream-aside>div>aside {
+    z-index: 3;
+}
+
+html>body>main>div>section.complex-list.ra_novosti-head {
+    margin-bottom: 32px;
+}
+html>body>main>div>section.complex-list>h1 {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: -.01em; 
+}
+
+html>body>main>div:not(.stream-aside)>h2.components-container__title {
+    margin-bottom: 12px;
+}
+
+html>body>main>div>section.list>ul.with-icons>li:not(:nth-child(-n+4)) {
+    display: block;
+}
+
+.stream-narrow .main-text h3 {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.rassrochka-banner .rassrochka-banner-text {
+    bottom: -5px;
+}
+.rassrochka-banner .rassrochka-banner-text span:first-child {
+    font-size: 400px;
+}
+.rassrochka-banner .rassrochka-banner-text span:last-child {
+    top: -90px;
+}
+
+.__phone-show {
+    display: none;
+}
+.__phone-show ul {
+    display: inline-block;
+    margin-top: 10px;
+}
+div.markup .__phone-show h3:not(:first-of-type) {
+    margin-top: 20px;
+}
+html>body>main>div>section.table>div.markup-wrapper>div.markup>table.stream-wide__table {
+    min-width: 400px;
+    width: 70%;
+}
+
+@media screen and (max-width: 1199px) {
+    .flatprogramms-col-wrap .flatprogramms-col-item > span {
+        margin: 0 10px;
+    }
+    .__phone-show {
+        display: block;
+        margin-bottom: 25px;
+    }
+    table.__phone-hide {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .flatprogramms-col-wrap .flatprogramms-col-item > span {
+        margin: 0 5px;
+    }
+    .flatprogramms-col-wrap .flatprogramms-col-item-icon span {
+        width: 78px;
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 975px) {
+    html>body>main>div>section.table>div.markup-wrapper.markup-table__wrapper {
+        width: 100%;
+        left: 0;
+    }
+    html>body>main>div>section.table>div.markup-wrapper>div.markup>table.stream-wide__table {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .rassrochka .rassrochka-banner {
+        height: 180px;
+    }
+    .rassrochka-banner .rassrochka-banner__title {
+        font-size: 34px;
+        letter-spacing: 7.68px;
+        margin-left: 10px;
+    }
+    .rassrochka-banner .rassrochka-banner__subtitle {
+        font-size: 20px;
+        letter-spacing: normal;
+        margin-left: 10px;
+    }
+    .rassrochka-banner .rassrochka-banner-text span:first-child {
+        font-size: 180px;
+        line-height: 130px;
+        margin-left: 5px;
+    }
+    .rassrochka-banner .rassrochka-banner-text span:last-child {
+        font-size: 70px;
+        top: -40px;
+    }
+    .markup-table__wrapper {
+        overflow-x: scroll;
+    }
+    html>body>main>div>section.table>div.markup-wrapper.markup-table__wrapper {
+        width: 100%;
+        left: 0;
+    }
+}
+@media screen and (max-width: 655px) {
+    html>body>main>div>section.table>div.markup-wrapper>div.markup>table>tbody>tr>td:last-child {
+        min-width: 350px;
+    }
+}
+
+.speed-poppup[data-popup-block-float] {
+    top: 130px;
+}
+
+html>body>header.account>div>button.logout.cart[data-items-count]::after, html>body>header>div>a.account.cart[data-items-count]::after, html>body>header>div>a.cart.cart[data-items-count]::after, html>body>header>div>button.account.cart[data-items-count]::after, html>body>header>div>button.cart.cart[data-items-count]::after, html>body>header>label.cart[data-items-count]::after{
+    min-width: 12px;
+    padding: 1px;
+    text-align: center;
+}
+
+ul.apartments>li>a>ul.features>li.rooms {
+    line-height: 0;
+}
+
+ul.apartments>li>a>ul.features>li.rooms>span {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 975px) {
+    ul.apartments>li>a>ul.features>li.rooms {
+        line-height: 24px;
+    }
+    ul.apartments>li>a>ul.features>li.rooms>span {
+        margin-top: 4px;
+    }
+}
+
+html>body>main>div>section.visual>figure.ra_corpus>svg>g#Apartments [data-apartment] {
+    fill: transparent !important;
+    stroke: #f46b1b;
+    stroke-width: 2;
+    opacity: 0.4;
+    transition: opacity 100ms ease-in-out 0ms;
+}
+html>body>main>div>section.visual>figure.ra_corpus>svg>g#Apartments [data-apartment]:hover {
+    opacity: 1;
+}
+
+/* Визуальный подборщик */
+.visual-picker {
+    pointer-events: none;
+    position: absolute;
+    padding: 10px;
+    background-color: #f46b1b;
+    border-radius: 6px;
+    color: #fff;
+    z-index: 1;
+}
+
+.visual-picker__name {
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+.visual-picker__end {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+html>body>main>div>section.visual>div.scheme>svg>g.is-active .region {
+    fill: #f78949;
+}
+/* End Визуальный подборщик */
+
+
+[data-vp-text] {
+    position: relative;
+}
+
+.defaultInput > .kladr-hint{
+    width: auto;
+}
+
+/* Выберите программы ипотеки "Банк партнер" */
+.ra_partner-bank {
+    position: absolute;
+    left: calc(50% + 15px);
+    bottom: calc(100% + 8px);
+    transform: translateX(-50%);
+    background-color: #30353b;
+    padding: 6px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    pointer-events: none;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: 120ms ease-in-out 0ms;
+    transition-property: visibility, opacity;
+}
+
+.ra_partner-bank::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    background-color: inherit;
+
+}
+
+html>body>main>div>section.banks>section.bank.partner:hover .ra_partner-bank,
+section.bank > .partner:hover .ra_partner-bank {
+    visibility: visible;
+    opacity: 1;
+}
+/* End Выберите программы ипотеки "Банк партнер" */
