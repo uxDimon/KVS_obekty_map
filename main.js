@@ -1,18 +1,65 @@
 const obektyMapGroupName = {
-	services: "Услуги",
-	money: "Финансы",
-	education: "Образование",
-	medicine: "Медицина и здоровье",
-	food: "Продукты",
-	sport: "Спорт",
-	beauty: "Красота",
-	cafe: "Кафе и рестораны",
-	art: "Творчество",
-	transport: "Транспорт",
-	parking: "Паркинги",
-	clothes: "Одежда",
-	magazin: "Магазины",
-	recreation: "Досуг и отдых",
+	all: {
+		text: "Все объекты",
+		icon:
+			"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none' role='img'%3E%3Cg fill='%2368717B'%3E%3Crect x='11' y='11' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='11' y='18' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='11' y='25' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='18' y='11' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='18' y='18' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='18' y='25' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='25' y='11' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='25' y='18' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='25' y='25' width='4' height='4' rx='2'%3E%3C/rect%3E%3C/g%3E%3C/svg%3E",
+	},
+	services: {
+		text: "Услуги",
+		icon: "",
+	},
+	money: {
+		text: "Финансы",
+		icon: "",
+	},
+	education: {
+		text: "Образование",
+		icon: "",
+	},
+	medicine: {
+		text: "Медицина и здоровье",
+		icon: "",
+	},
+	food: {
+		text: "Продукты",
+		icon: "",
+	},
+	sport: {
+		text: "Спорт",
+		icon: "",
+	},
+	beauty: {
+		text: "Красота",
+		icon: "",
+	},
+	cafe: {
+		text: "Кафе и рестораны",
+		icon: "",
+	},
+	art: {
+		text: "Творчество",
+		icon: "",
+	},
+	transport: {
+		text: "Транспорт",
+		icon: "",
+	},
+	parking: {
+		text: "Паркинги",
+		icon: "",
+	},
+	clothes: {
+		text: "Одежда",
+		icon: "",
+	},
+	magazin: {
+		text: "Магазины",
+		icon: "",
+	},
+	recreation: {
+		text: "Досуг и отдых",
+		icon: "",
+	},
 };
 
 ymaps.ready(function () {
@@ -90,14 +137,7 @@ ymaps.ready(function () {
 		const obektyMapIcon = {
 			// Список всех меток
 			list: {
-				all: [
-					{
-						iconUrl:
-							"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none' role='img'%3E%3Cg fill='%2368717B'%3E%3Crect x='11' y='11' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='11' y='18' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='11' y='25' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='18' y='11' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='18' y='18' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='18' y='25' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='25' y='11' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='25' y='18' width='4' height='4' rx='2'%3E%3C/rect%3E%3Crect x='25' y='25' width='4' height='4' rx='2'%3E%3C/rect%3E%3C/g%3E%3C/svg%3E",
-						text: "Все объекты",
-						coordinates: [59.87535966, 30.33422828],
-					},
-				],
+				all: [],
 			},
 			created() {
 				for (const icon of mapWrap.querySelectorAll(".markers > .grouped-map-marker")) {
@@ -106,36 +146,49 @@ ymaps.ready(function () {
 						text: icon.dataset.markup,
 						coordinates: [icon.dataset.latitude, icon.dataset.longitude],
 					};
-
-					if (this.list[icon.dataset.group] === undefined) this.list[icon.dataset.group] = [];
-
+					if (!Array.isArray(this.list[icon.dataset.group])) {
+						this.list[icon.dataset.group] = [];
+						obektyMapGroupName[icon.dataset.group].icon = icon.dataset.icon;
+					}
 					this.list[icon.dataset.group].push(iconOptions);
+				}
+
+				for (const key in this.list) {
+					if (Object.hasOwnProperty.call(this.list, key)) this.list.all.push(...this.list[key]);
 				}
 			},
 		};
 		obektyMapIcon.created();
+		console.log(obektyMapIcon.list);
+		console.log(obektyMapGroupName);
 
-		function obektyListItem(key, callback, iconList = null, name = null, wrap = null) {
-			iconList = iconList ? iconList : obektyMapIcon.list;
-			name = name ? name : obektyMapGroupName;
-			wrap = wrap ? wrap : mapWrap.querySelector(".obekty-list");
-
+		function obektyListItem(params) {
+			params = Object.assign(
+				{
+					key: null,
+					callback: null,
+					iconUrl: obektyMapGroupName[params.key].icon,
+					text: obektyMapGroupName[params.key].text,
+					wrap: mapWrap.querySelector(".obekty-list"),
+				},
+				params
+			);
 			// Выбор категории меток
 			let item = document.createElement("li");
 			item.className = "obekty-list__item";
 			item.innerHTML = `
 				<label class="obekty-list__button">
 					<input class="obekty-list__input" type="radio" name="obekty-list" />
-					<img src="${iconList[key][0].iconUrl}" width="40" height="40" alt="${name[key]}" class="obekty-list__button-icon">
-					<span class="obekty-list__button-text">${name[key]}</span>
+					<img src="${params.iconUrl}" width="40" height="40" alt="${params.text}" class="obekty-list__button-icon">
+					<span class="obekty-list__button-text">${params.text}</span>
 				</label>
 			`;
 			item.querySelector(".obekty-list__input").addEventListener("change", () => {
 				myMap.geoObjects.removeAll();
-				callback.apply(null, [key]);
+				params.callback.apply(null, [params.key]);
 			});
 
-			wrap.insertAdjacentElement("beforeend", item);
+			params.wrap.insertAdjacentElement("beforeend", item);
 		}
 
 		function addIconMap(key) {
@@ -153,32 +206,14 @@ ymaps.ready(function () {
 				myMap.geoObjects.add(myPlacemark);
 			}
 		}
-		console.log(obektyMapIcon.list);
 
 		for (const key in obektyMapIcon.list) {
 			if (Object.hasOwnProperty.call(obektyMapIcon.list, key)) {
-				obektyListItem(key, addIconMap);
+				obektyListItem({
+					key: key,
+					callback: addIconMap,
+				});
 			}
 		}
 	}
 });
-
-// function name(params) {
-// 	params = Object.assign(
-// 		{
-// 			id: 1,
-// 			slector: "kakaka",
-// 			list: {
-// 				dddddd: "2",
-// 			},
-// 		},
-// 		params
-// 	);
-// 	console.log(params);
-// }
-// name({
-// 	id: 2,
-// 	list: {
-// 		ccccc: "3",
-// 	},
-// });
