@@ -148,6 +148,7 @@
 	padding: 0;
 	margin: 0;
 	height: 100%;
+	padding-right: 4px;
 }
 .obekty-list::-webkit-scrollbar {
 	width: 4px;
