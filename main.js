@@ -151,6 +151,8 @@ ymaps.ready(function () {
 					`),
 				coordinates: null,
 			},
+			activGroup: null,
+			controlGroup: {},
 			created() {
 				for (const icon of mapWrap.querySelectorAll(".markers > .grouped-map-marker")) {
 					const iconOptions = {
@@ -199,14 +201,29 @@ ymaps.ready(function () {
 			item.querySelector(".obekty-list__input").addEventListener("change", () => {
 				myMap.geoObjects.removeAll();
 				params.callback.apply(null, [params.key]);
-				addIconOffesMap();
+				// addIconOffesMap();
+				obektyMapIcon.activGroup = params.key;
 			});
 
 			params.wrap.insertAdjacentElement("beforeend", item);
 		}
 
+		function addIconOffesMap(myCollection) {
+			// Вывод иконки офиса продаж
+			const myPlacemark = new ymaps.Placemark(
+				obektyMapIcon.offes.coordinates,
+				{},
+				{
+					iconLayout: obektyMapIcon.offes.icon,
+				}
+			);
+			myCollection.add(myPlacemark);
+			// myMap.geoObjects.add(myPlacemark);
+		}
+
 		function addIconMap(key) {
 			// Вывод иконок на карту
+			const myCollection = new ymaps.GeoObjectCollection();
 			for (const icon of obektyMapIcon.list[key]) {
 				const myPlacemark = new ymaps.Placemark(
 					icon.coordinates,
@@ -218,19 +235,22 @@ ymaps.ready(function () {
 						iconLayout: animatedLayout,
 					}
 				);
-				myMap.geoObjects.add(myPlacemark);
+				myCollection.add(myPlacemark);
 			}
-		}
-
-		function addIconOffesMap() {
-			const myPlacemark = new ymaps.Placemark(
-				obektyMapIcon.offes.coordinates,
-				{},
-				{
-					iconLayout: obektyMapIcon.offes.icon,
-				}
-			);
-			myMap.geoObjects.add(myPlacemark);
+			addIconOffesMap(myCollection);
+			myMap.geoObjects.add(myCollection);
+			myMap.margin.addArea({
+				left: 0,
+				top: 0,
+				width: 78,
+				height: 101,
+			});
+			myMap.setBounds(myCollection.getBounds(), {
+				checkZoomRange: true,
+				zoomMargin: [40, 40, 40, 350],
+				duration: 500,
+				timingFunction: "ease-in-out",
+			});
 		}
 
 		for (const key in obektyMapIcon.list) {
@@ -242,13 +262,44 @@ ymaps.ready(function () {
 			}
 		}
 
-		document.querySelectorAll(".obekty-list .obekty-list__button").forEach((item, index, list) => {
+		mapWrap.querySelectorAll(".obekty-list .obekty-list__button").forEach((item, index, list) => {
+			// Активный класс для переключений групп
 			const input = item.querySelector(".obekty-list__input");
 			input.addEventListener("change", () => {
 				for (const itemList of list) itemList.classList.remove(obektyMapActiveClass);
 				item.classList.add(obektyMapActiveClass);
 			});
+			obektyMapIcon.controlGroup[input.value] = input;
 			if (input.value === "all") item.click();
 		});
+
+		// Переключение табов объекты / офис
+		const tabSwich = mapWrap.querySelectorAll("[data-obekty-swich]"),
+			tabBlock = {};
+		for (const block of mapWrap.querySelectorAll("[data-obekty-block]")) tabBlock[block.dataset.obektyBlock] = block;
+		for (const tabSwichItem of tabSwich) {
+			tabSwichItem.addEventListener("change", () => {
+				for (const key in tabBlock) {
+					if (Object.hasOwnProperty.call(tabBlock, key)) tabBlock[key].style.display = "none";
+				}
+				tabBlock[tabSwichItem.dataset.obektySwich].style.display = "block";
+
+				if (tabSwichItem.dataset.obektySwich === "list") {
+					obektyMapIcon.controlGroup[obektyMapIcon.activGroup].click();
+				} else if (tabSwichItem.dataset.obektySwich === "offes") {
+					obektyMapIcon.controlGroup[obektyMapIcon.activGroup].checked = false;
+					myMap.geoObjects.removeAll();
+					const myCollection = new ymaps.GeoObjectCollection();
+					addIconOffesMap(myCollection);
+					myMap.geoObjects.add(myCollection);
+					myMap.setCenter(obektyMapIcon.offes.coordinates, 14, {
+						checkZoomRange: true,
+						duration: 500,
+						timingFunction: "ease-in-out",
+					});
+				}
+			});
+			if (tabSwichItem.dataset.obektySwich === "list") tabSwichItem.click();
+		}
 	}
 });

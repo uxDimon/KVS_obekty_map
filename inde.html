@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="./ra.css" />
 		<link rel="stylesheet" href="./style.css" />
 	</head>
-	<body style="margin: 0; padding: 0; background-color: dimgray; display: flex; justify-content: center; flex-direction: row;">
+	<body style="margin: 0; padding: 0; background-color: dimgray; display: flex; justify-content: center; flex-direction: row">
 		<div style="width: 1416px">
 			<!-- Карта начинается тут -->
 			<div class="obekty-map">
@@ -382,7 +382,7 @@
 					<!-- END Этот блок такой же как на квс -->
 					<div class="obekty-map__map"></div>
 				</div>
-				<ul class="obekty-map__nav">
+				<div class="obekty-map__nav">
 					<div class="obekty-swich__wrap">
 						<label class="obekty-swich">
 							<input data-obekty-swich="list" type="radio" name="obekty-swich" class="obekty-swich__input" />
@@ -393,31 +393,14 @@
 							<span class="obekty-swich__text">Офис продаж</span>
 						</label>
 					</div>
-					<div data-obekty-block="offes" class="obekty-offes" style="display: none;">
+					<div data-obekty-block="offes" class="obekty-offes" style="display: none">
 						<img src="https://kvsspb.ru/upload/iblock/9b0/nautilus.jpg" alt="ЖК «Наутилус»" />
 						<h3>ЖК «Наутилус»</h3>
 						<address>Набережная Матисова канала, 1</address>
 						<p class="working-time">Четверг - понедельник: 10.00 - 19.00<br />Вторник, среда: выходной</p>
 						<p class="notification">В офисе продаж работает ипотечный консультант</p>
 					</div>
-					<ul class="obekty-list">
-						<!-- <li class="obekty-list__item">
-							<label class="obekty-list__button">
-								<input class="obekty-list__input" type="radio" name="obekty-list" />
-								<img src="beauty.svg" width="40" height="40" alt="Все объекты" class="obekty-list__button-icon">
-								<span class="obekty-list__button-text">Все объекты</span>
-							</label>
-						</li>
-						<li class="obekty-list__item">
-							<label class="obekty-list__button">
-								<input class="obekty-list__input" type="radio" name="obekty-list" />
-								<img src="beauty.svg" width="40" height="40" alt="Все объекты" class="obekty-list__button-icon">
-								<span class="obekty-list__button-text">Кафе и рестораны</span>
-							</label>
-						</li> -->
-					</ul>
-					<!-- <div data-obekty-block="list" class="obekty-list__wrap">
-					</div> -->
+					<ul data-obekty-block="list" class="obekty-list"></ul>
 				</div>
 			</div>
 			<!-- Кончается тут -->
