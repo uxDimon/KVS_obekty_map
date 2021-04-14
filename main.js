@@ -159,6 +159,20 @@ ymaps.ready(function () {
 			},
 		};
 		obektyMapIcon.created();
+		const optionSize = {
+			zoomMargin: [40, 40, 40, 370],
+			zoomControlBottom: 40,
+			created() {
+				if (document.documentElement.scrollWidth <= 920) {
+					this.zoomMargin = [20, 20, 20, 100];
+					this.zoomControlBottom = 100;
+				} else {
+					this.zoomMargin = [40, 40, 40, 370];
+					this.zoomControlBottom = 40;
+				}
+			},
+		};
+		optionSize.created();
 
 		let myMap = new ymaps.Map(map, {
 			// Создаёт карту
@@ -172,7 +186,7 @@ ymaps.ready(function () {
 			position: {
 				left: "auto",
 				top: "auto",
-				bottom: 40,
+				bottom: optionSize.zoomControlBottom,
 				right: 20,
 			},
 		});
@@ -237,15 +251,9 @@ ymaps.ready(function () {
 			}
 			addIconOffesMap(myCollection);
 			myMap.geoObjects.add(myCollection);
-			myMap.margin.addArea({
-				left: 0,
-				top: 0,
-				width: 78,
-				height: 101,
-			});
 			myMap.setBounds(myCollection.getBounds(), {
 				checkZoomRange: true,
-				zoomMargin: [40, 40, 40, 350],
+				zoomMargin: optionSize.zoomMargin,
 				duration: 500,
 				timingFunction: "ease-in-out",
 			});
