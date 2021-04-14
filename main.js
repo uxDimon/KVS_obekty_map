@@ -118,23 +118,6 @@ ymaps.ready(function () {
 			}
 		);
 
-		let myMap = new ymaps.Map(map, {
-			// Создаёт карту
-			center: [59.875713, 30.335795],
-			zoom: 14,
-			controls: [],
-		});
-		myMap.controls.add("zoomControl", {
-			// Кнопки зума на карту
-			size: "small",
-			position: {
-				left: "auto",
-				top: "auto",
-				bottom: 40,
-				right: 20,
-			},
-		});
-
 		const obektyMapIcon = {
 			// Список всех меток
 			list: {
@@ -177,6 +160,23 @@ ymaps.ready(function () {
 		};
 		obektyMapIcon.created();
 
+		let myMap = new ymaps.Map(map, {
+			// Создаёт карту
+			center: obektyMapIcon.offes.coordinates,
+			zoom: 15,
+			controls: [],
+		});
+		myMap.controls.add("zoomControl", {
+			// Кнопки зума на карту
+			size: "small",
+			position: {
+				left: "auto",
+				top: "auto",
+				bottom: 40,
+				right: 20,
+			},
+		});
+
 		function obektyListItem(params) {
 			params = Object.assign(
 				{
@@ -201,7 +201,6 @@ ymaps.ready(function () {
 			item.querySelector(".obekty-list__input").addEventListener("change", () => {
 				myMap.geoObjects.removeAll();
 				params.callback.apply(null, [params.key]);
-				// addIconOffesMap();
 				obektyMapIcon.activGroup = params.key;
 			});
 
@@ -218,7 +217,6 @@ ymaps.ready(function () {
 				}
 			);
 			myCollection.add(myPlacemark);
-			// myMap.geoObjects.add(myPlacemark);
 		}
 
 		function addIconMap(key) {
@@ -292,7 +290,7 @@ ymaps.ready(function () {
 					const myCollection = new ymaps.GeoObjectCollection();
 					addIconOffesMap(myCollection);
 					myMap.geoObjects.add(myCollection);
-					myMap.setCenter(obektyMapIcon.offes.coordinates, 14, {
+					myMap.setCenter(obektyMapIcon.offes.coordinates, 15, {
 						checkZoomRange: true,
 						duration: 500,
 						timingFunction: "ease-in-out",
