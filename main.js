@@ -190,6 +190,7 @@ ymaps.ready(function () {
 				right: 20,
 			},
 		});
+		myMap.behaviors.disable("scrollZoom");
 
 		function obektyListItem(params) {
 			params = Object.assign(
